@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                    xmlns:cmp="clr-namespace:ImageMagickApprovalReporter.Comperers">
+    <DataTemplate DataType="{x:Type cmp:OutlineImageCompererParms}">
+        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+            <TextBlock Text="Higlight Color: " />
+            <ComboBox ItemsSource="{Binding AvailbleColors}" SelectedItem="{Binding HighLightColor}"
+                      MinWidth="100" />
+            <TextBlock Text="Show Images: " Margin="5,0,0,0" />
+            <CheckBox IsChecked="{Binding ShowImages}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

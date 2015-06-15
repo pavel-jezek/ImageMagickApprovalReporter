@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                    xmlns:cmp="clr-namespace:ImageMagickApprovalReporter.Comperers">
+    <DataTemplate DataType="{x:Type cmp:ImageCompererParms}">
+        <StackPanel Orientation="Horizontal"  VerticalAlignment="Center">
+            <TextBlock Text="Higlight Color: " />
+            <ComboBox ItemsSource="{Binding AvailbleColors}" SelectedItem="{Binding HighLightColor}"
+                      MinWidth="100" />
+
+            <TextBlock Text="Operator: " />
+            <ComboBox ItemsSource="{Binding AvailbleOperators}" SelectedItem="{Binding Operator}"
+                      Width="100" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

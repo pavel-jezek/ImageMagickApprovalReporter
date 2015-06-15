@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="ImageMagickApprovalReporter.UI.ImageDetails"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cnv="clr-namespace:ImageMagickApprovalReporter.UI.Converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <cnv:FilePathToNameConverter x:Key="FilePathToNameConverter" />
+        <cnv:HashKeyToColorConverter x:Key="DiffCnv" />
+        <cnv:TestConverter x:Key="testCnv" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding FilePath, Converter={StaticResource FilePathToNameConverter}}" />
+
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Width:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=Width, Converter={StaticResource DiffCnv}}" />
+        <TextBlock Grid.Row="0" Grid.Column="6" Text="{Binding Width}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Format:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=ImageFormat, Converter={StaticResource DiffCnv}}" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ImageFormat}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="4" Text="Height:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=Height, Converter={StaticResource DiffCnv}}" />
+        <TextBlock Grid.Row="1" Grid.Column="6" Text="{Binding Height}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="File Size:" />
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding FileSizeInBytes}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="4" Text="Vertical Resolution:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=VerticalResolution, Converter={StaticResource DiffCnv}}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="6" Text="{Binding VerticalResolution}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="ColorSpace:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=ColorSpace, Converter={StaticResource DiffCnv}}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding ColorSpace}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="4" Text="Horizontal Resolution:"
+                   HorizontalAlignment="Left"
+                   Background="{Binding Diff, ConverterParameter=HorizontalResolution, Converter={StaticResource DiffCnv}}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="6" Text="{Binding HorizontalResolution}" />
+    </Grid>
+</UserControl>
