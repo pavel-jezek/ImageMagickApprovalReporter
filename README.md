@@ -5,13 +5,15 @@ ApprovalTest has several built-in bindings to reporters you can use.
 One of them which is very nice is [Perforce P4Merge](http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools).
 But for me it has several limitations, the foremost is that there is no way to approve an image.
 
+This library uses [Magick.NET](https://magick.codeplex.com/) (a .net wrapper for [ImageMagick](http://www.imagemagick.org/)) for showing the diffrences between the images.
+
 Usage
 ---
 Just add `[UseReporter(typeof(IMImageReporter)]` attribute on the test class or test method. See the [AprrovalTests documentation](http://blog.approvaltests.com/2011/12/using-reporters-in-approval-tests.html)
 
 NuGet Availabilty
 ---
-A Nuget package will come soon.
+[Install-Package ImageMagickApprovalReporter](https://www.nuget.org/packages/ImageMagickApprovalReporter/)
 
 Example
 ---
