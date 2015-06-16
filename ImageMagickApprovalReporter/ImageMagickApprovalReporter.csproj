@@ -87,6 +87,7 @@
     <Compile Include="Util\ReflectionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ImageMagickApprovalReporter.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
