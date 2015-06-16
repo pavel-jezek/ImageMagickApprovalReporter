@@ -35,21 +35,22 @@ ScreenShots
 ---
 **At first, there is nothing to compare to, so just approve it if it is the right file**
 
-![](ReadmeResources/ScrrenShot0.jpg)
+![](https://github.com/zivni/ImageMagickApprovalReporter/blob/master/ReadmeResources/ScreenShot0.jpg)
 
 **Compare using the outline method**
 
-![](ReadmeResources/ScrrenShot1.jpg)
+![](https://github.com/zivni/ImageMagickApprovalReporter/blob/master/ReadmeResources/ScreenShot1.jpg)
 
 **Compare using the absolute method**
 
-![](ReadmeResources/ScrrenShot2.jpg)
+![](https://github.com/zivni/ImageMagickApprovalReporter/blob/master/ReadmeResources/ScreenShot2.jpg)
 
 **When the image attributes are different, the differences are highlighted**
 
-![](ReadmeResources/ScrrenShot3.jpg)
+![](https://github.com/zivni/ImageMagickApprovalReporter/blob/master/ReadmeResources/ScreenShot3.jpg)
 
 Contributions
+---
 If you are good at ImageMagick and can make the Comparsions better, please help.
 
 License
