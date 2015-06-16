@@ -11,11 +11,14 @@ namespace ImageMagickApprovalReporter.Tests
     {
         private static string solutiondirecory = PathUtilities.GetDirectoryForCaller();
         private static string imagesDirectory = solutiondirecory + @"Images\";
+        private static string fileNameUnderTest = imagesDirectory + "test.jpg";
+
         private string generatedApprovedFilePath;
 
         [TestCleanup]
         public void _Cleanup()
         {
+            File.Delete(fileNameUnderTest);
             if (generatedApprovedFilePath != null)
                 File.Delete(generatedApprovedFilePath);
         }
@@ -41,23 +44,21 @@ namespace ImageMagickApprovalReporter.Tests
         [TestMethod]
         public void WHEN_approved_file_doesnt_exists_THEN_show_only_recived()
         {
-            string fileName = imagesDirectory + "test.jpg";
-            File.Copy(imagesDirectory + "testSource1.jpg", fileName, true);
+            File.Copy(imagesDirectory + "testSource1.jpg", fileNameUnderTest, true);
             SetGeneratedApprovedFilePath();
             File.Delete(generatedApprovedFilePath);
 
-            Approvals.VerifyFile(fileName);
+            Approvals.VerifyFile(fileNameUnderTest);
         }
 
         private void TestTwoFiles(string srcFile, string approvedFile)
         {
-            string fileName = imagesDirectory + "test.jpg";
             string srcApprovedFilePath = imagesDirectory + approvedFile;
             SetGeneratedApprovedFilePath();
-            File.Copy(imagesDirectory + srcFile, fileName, true);
+            File.Copy(imagesDirectory + srcFile, fileNameUnderTest, true);
             File.Copy(srcApprovedFilePath, generatedApprovedFilePath, true);
 
-            Approvals.VerifyFile(fileName);
+            Approvals.VerifyFile(fileNameUnderTest);
         }
 
         private void SetGeneratedApprovedFilePath()
