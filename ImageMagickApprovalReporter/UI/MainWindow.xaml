@@ -36,9 +36,9 @@
                 <RowDefinition />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Image x:Name="RecivedImage" Grid.Column="0" />
-            <Image x:Name="DiffImage" Grid.Column="2" />
-            <Image x:Name="ApprovedImage" Grid.Column="4" />
+            <Image x:Name="RecivedImage" Grid.Column="0" RenderOptions.BitmapScalingMode="NearestNeighbor" />
+            <Image x:Name="DiffImage" Grid.Column="2" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+            <Image x:Name="ApprovedImage" Grid.Column="4" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
 
             <myui:ImageDetails Grid.Column="0" Grid.Row="1"  x:Name="RecivedImageDetiails" />
             <myui:ImageDetails Grid.Column="4" Grid.Row="1"  x:Name="ApprovedImageDetiails" />
